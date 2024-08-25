@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>velocimetro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor-velocimetro">
+        <div class="barras-circulares">
+            <div class="barra-circular barra-gasolina">
+                <svg viewBox="0 0 36 36">
+                    <path class="bg" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="progreso gasolina-lleno" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                </svg>
+                <i class="fas fa-gas-pump"></i>
+            </div>
+            <div class="pantalla-velocidad">
+                <span class="valor-velocidad">0</span>
+            </div>
+            <div class="barra-circular barra-rpm">
+                <svg viewBox="0 0 36 36">
+                    <path class="bg" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="progreso rpm-lleno" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                </svg>
+                <i class="fas fa-tachometer-alt"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

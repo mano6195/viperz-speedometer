@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  font-family: 'Mulish';
+}
+
+.contenedor-velocimetro {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.visible {
+  animation: mostrarVelocimetro 0.75s forwards;
+}
+
+.oculto {
+  animation: ocultarVelocimetro 0.75s forwards;
+}
+
+@keyframes mostrarVelocimetro {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ocultarVelocimetro {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.barras-circulares {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.barra-circular {
+  position: relative;
+  width: 45px;
+  height: 45px;
+}
+
+.barra-circular svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.barra-circular .bg {
+  fill: none;
+  stroke: #444;
+  stroke-width: 2.5;
+}
+
+.barra-circular .progreso {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-dasharray: 100, 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.barra-gasolina .progreso {
+  stroke: #ffffff;
+}
+
+.barra-rpm .progreso {
+  stroke: #ffffff;
+}
+
+.barra-circular i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  color: white;
+}
+
+.pantalla-velocidad {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  width: 80px;
+  text-align: center;
+}
+
+.animacion-gasolina-baja {
+  animation: parpadeo 1s infinite;
+}
+
+@keyframes parpadeo {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0.3;
+  }
+}
